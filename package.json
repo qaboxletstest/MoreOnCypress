@@ -1,0 +1,17 @@
+{
+  "name": "moreoncypress",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "cypress-ntlm open"
+  },
+  "keywords": [],
+  "author": "QA BOX <qabox@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "cypress": "^7.6.0",
+    "cypress-fail-on-console-error": "^2.1.0",
+    "cypress-ntlm-auth": "^3.2.3"
+  }
+}
