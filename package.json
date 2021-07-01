@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "cypress-ntlm open"
+    "test": "cypress-ntlm open",
+    "test:run": "cypress-ntlm run"
   },
   "keywords": [],
   "author": "QA BOX <qabox@gmail.com>",
@@ -12,6 +13,7 @@
   "dependencies": {
     "cypress": "^7.6.0",
     "cypress-fail-on-console-error": "^2.1.0",
-    "cypress-ntlm-auth": "^3.2.3"
+    "cypress-ntlm-auth": "^3.2.3",
+    "del": "^6.0.0"
   }
 }
