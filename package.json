@@ -5,7 +5,12 @@
   "main": "index.js",
   "scripts": {
     "test": "cypress-ntlm open",
-    "test:run": "cypress-ntlm run"
+    "test:run": "cypress-ntlm run",
+    "test:smoke": "cypress run --env grep=\"Smoke\"",
+    "test:smoke:regression": "cypress run --env grep=\"Smoke; Regression\"",
+    "test:tag:sprint": "cypress run --env grepTags=\"Sprint\"",
+    "test:tag:sprintOrRegression": "cypress run --env grepTags=\"Sprint Regression \"",
+    "test:tag:sprintAndRegression": "cypress run --env grepTags=\"Sprint+Regression \""
   },
   "keywords": [],
   "author": "QA BOX <qabox@gmail.com>",
@@ -13,6 +18,7 @@
   "dependencies": {
     "cypress": "^7.6.0",
     "cypress-fail-on-console-error": "^2.1.0",
+    "cypress-grep": "^2.5.2",
     "cypress-ntlm-auth": "^3.2.3",
     "del": "^6.0.0"
   }

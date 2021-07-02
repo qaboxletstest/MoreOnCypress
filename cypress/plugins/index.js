@@ -1,6 +1,7 @@
 /// <reference types="cypress" />
 const del = require('del')
 module.exports = (on, config) => {
+  require('cypress-grep/src/plugin')(config)
   on("task", {});
   on('after:spec', (spec, results) => {
     if (results.stats.failures === 0 && results.video) {

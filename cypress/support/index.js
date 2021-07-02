@@ -1,3 +1,4 @@
+require('cypress-grep')()
 import "cypress-ntlm-auth/dist/commands";
 import failOnConsoleError, { consoleType } from 'cypress-fail-on-console-error';
 const config = {
