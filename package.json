@@ -10,7 +10,8 @@
     "test:smoke:regression": "cypress run --env grep=\"Smoke; Regression\"",
     "test:tag:sprint": "cypress run --env grepTags=\"Sprint\"",
     "test:tag:sprintOrRegression": "cypress run --env grepTags=\"Sprint Regression \"",
-    "test:tag:sprintAndRegression": "cypress run --env grepTags=\"Sprint+Regression \""
+    "test:tag:sprintAndRegression": "cypress run --env grepTags=\"Sprint+Regression \"",
+    "test:tag:invertRegression": "cypress run --env grepTags=\"-Regression \" --spec \"cypress/integration/Group_TCS_2.js\""
   },
   "keywords": [],
   "author": "QA BOX <qabox@gmail.com>",
