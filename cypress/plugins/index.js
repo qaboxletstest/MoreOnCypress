@@ -2,6 +2,12 @@
 const del = require('del')
 module.exports = (on, config) => {
   require('cypress-grep/src/plugin')(config)
+  on('before:browser:launch', (browser, launchOptions) => {
+    // supply the absolute path to an unpacked extension's folder
+    // NOTE: extensions cannot be loaded in headless Chrome
+    launchOptions.extensions.push('C:/Training/MoreOnCypress/Ignore X-Frame headers')
+    return launchOptions
+  })
   on("task", {});
   on('after:spec', (spec, results) => {
     if (results.stats.failures === 0 && results.video) {
