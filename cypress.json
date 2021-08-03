@@ -1,5 +1,6 @@
 {
     "$schema": "https://on.cypress.io/cypress.schema.json",
     "screenshotOnRunFailure": false,
-    "video": false
+    "video": false,
+    "chromeWebSecurity": true
 }

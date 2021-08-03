@@ -2,3 +2,4 @@ node_modules
 .http-mitm-proxy
 cypress/videos
 cypress/screenshots
+Ignore X-Frame headers

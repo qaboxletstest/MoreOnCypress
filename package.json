@@ -6,6 +6,7 @@
   "scripts": {
     "test": "cypress-ntlm open",
     "test:run": "cypress-ntlm run",
+    "test-open": "cypress open",
     "test:smoke": "cypress run --env grep=\"Smoke\"",
     "test:smoke:regression": "cypress run --env grep=\"Smoke; Regression\"",
     "test:tag:sprint": "cypress run --env grepTags=\"Sprint\"",
