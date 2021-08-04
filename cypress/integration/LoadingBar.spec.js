@@ -9,4 +9,9 @@ describe('Testing the loading bar', () => {
         cy.get("#loader").should("not.exist")
         cy.get("#users").should("exist")
     });
+
+    it.only('iFramed App', () => {
+        cy.ntlm(["localhost:9191"], Cypress.env("username"), Cypress.env("password"));
+        cy.visit("http://127.0.0.1:5500/Other/frameApp.html")
+    });
 });

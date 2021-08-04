@@ -23,5 +23,8 @@
     "cypress-grep": "^2.5.2",
     "cypress-ntlm-auth": "^3.2.3",
     "del": "^6.0.0"
+  },
+  "devDependencies": {
+    "@neuralegion/cypress-har-generator": "^5.2.3"
   }
 }
