@@ -8,16 +8,15 @@ describe('Testing the loading bar', () => {
         cy.get("input[name='q']").type("https://docs.cypress.io/plugins/directory{enter}")
     });
 
-    it('Youtube', () => {
-        cy.visit("https://www.youtube.com/c/qaboxletstest/")
-        cy.get('input#search').should("be.visible")
+    it('Search QA Box Lets Test in Youtube', () => {
+        cy.visit("https://www.google.in");
+        cy.get("input[name='q']").type("https://www.youtube.com/c/qaboxletstest{enter}")
     });
 
     after(() => {
         // HAR will be saved as users.spec.har 
         // at the root of the project 
-        cy.saveHar({
-            outDir: './hars'
-        });
+        cy.saveHar();
     });
+
 });

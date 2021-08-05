@@ -2,7 +2,6 @@
 const del = require('del')
 const path = require("path")
 const { install, ensureBrowserFlags } = require('@neuralegion/cypress-har-generator');
-
 module.exports = (on, config) => {
   install(on, config);
   require('cypress-grep/src/plugin')(config)

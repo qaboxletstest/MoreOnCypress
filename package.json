@@ -18,7 +18,7 @@
   "author": "QA BOX <qabox@gmail.com>",
   "license": "MIT",
   "dependencies": {
-    "cypress": "^8.1.0",
+    "cypress": "^8.2.0",
     "cypress-fail-on-console-error": "^2.1.0",
     "cypress-grep": "^2.5.2",
     "cypress-ntlm-auth": "^3.2.3",
