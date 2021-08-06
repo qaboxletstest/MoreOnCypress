@@ -1,4 +1,5 @@
 /// <reference types="cypress" />
+const _ = require('lodash')
 const del = require('del')
 const path = require("path")
 const { install, ensureBrowserFlags } = require('@neuralegion/cypress-har-generator');
