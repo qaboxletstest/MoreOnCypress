@@ -9,7 +9,8 @@ describe('How to capture videos of failed test cases properly?', () => {
 
     afterEach(function () {
         if (this.currentTest.state === "failed") {
-            cy.wait(5000)
+            cy.wait(10000)
         }
     })
+
 });
