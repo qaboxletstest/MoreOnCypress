@@ -2,9 +2,9 @@ export const create_user = `
 mutation{
   createUser(
     options:{
-    firstName:"Kapil",
-    lastName:"Dev",
-    age:60
+    firstName:"Sachin",
+    lastName:"Tendulkar",
+    age:40
   }
   ){
     id

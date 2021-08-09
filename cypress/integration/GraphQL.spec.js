@@ -3,7 +3,7 @@ import { select_user, create_user, update_user, delete_user } from "../GraphQLBo
 describe('GraphQL Endpoints Test Suite', () => {
     const URL = "http://localhost:4000/graphql";
 
-    it.only('Mutation - Create User', () => {
+    it.skip('Mutation - Create User', () => {
         cy.request({
             url: URL,
             method: "POST",
@@ -23,7 +23,7 @@ describe('GraphQL Endpoints Test Suite', () => {
                 query: select_user
             }
         }).then(res => {
-            expect(res.body.data.users).to.have.length(2);
+            expect(res.body.data.users).to.have.length(1);
         })
     });
 
