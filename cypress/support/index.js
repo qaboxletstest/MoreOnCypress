@@ -41,3 +41,7 @@ Cypress.on('uncaught:exception', (err, runnable) => {
     // failing the test
     return false
 })
+
+// Cypress.SelectorPlayground.defaults({
+//     selectorPriority:['id', 'class', 'attribute']
+// })
