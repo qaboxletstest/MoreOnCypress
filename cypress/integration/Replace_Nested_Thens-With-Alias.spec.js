@@ -13,7 +13,7 @@ describe('Replace Nested Thens with Alias', () => {
                     const totalRows = parseInt($el1.text())
                     const totalRowsUB = parseInt($el2.text())
                     const totalRowsLB = parseInt($el3.text())
-                    const iterCount = (totalRows) / (totalRowsUB - totalRowsLB - 1)
+                    const iterCount = (totalRows / totalRowsUB) - totalRowsLB
                     for (let index = 0; index < iterCount; index++) {
                         cy.contains("button.ag-paging-button", "Next").click()
                     }
@@ -22,12 +22,12 @@ describe('Replace Nested Thens with Alias', () => {
         })
     });
 
-    it.skip('Alias', () => {
-        cy.get("span[ref='lbRecordCount']").invoke('text').then(parseInt).as('totalRows')
-        cy.get("span[ref='lbLastRowOnPage']").invoke('text').then(parseInt).as('totalRowsUB')
-        cy.get("span[ref='lbFirstRowOnPage']").invoke('text').then(parseInt).as('totalRowsLB')
+    it.only('Alias', () => {
+        cy.get("span[ref='lbRecordCount']").invoke("text").then(parseInt).as("totalRows")
+        cy.get("span[ref='lbLastRowOnPage']").invoke("text").then(parseInt).as("totalRowsUB")
+        cy.get("span[ref='lbFirstRowOnPage']").invoke("text").then(parseInt).as("totalRowsLB")
             .then(function () {
-                const iterCount = (this.totalRows) / (this.totalRowsUB - this.totalRowsLB - 1)
+                const iterCount = (this.totalRows / this.totalRowsUB) - this.totalRowsLB
                 for (let index = 0; index < iterCount; index++) {
                     cy.contains("button.ag-paging-button", "Next").click()
                 }

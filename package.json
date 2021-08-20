@@ -25,7 +25,9 @@
     "cypress-grep": "^2.5.2",
     "cypress-ntlm-auth": "^3.2.3",
     "del": "^6.0.0",
-    "form-data": "^4.0.0"
+    "form-data": "^4.0.0",
+    "jimp": "^0.16.1",
+    "qrcode-reader": "^1.0.4"
   },
   "devDependencies": {
     "@neuralegion/cypress-har-generator": "^5.2.3"

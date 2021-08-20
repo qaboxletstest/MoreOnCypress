@@ -6,12 +6,15 @@ const { install, ensureBrowserFlags } = require('@neuralegion/cypress-har-genera
 var axios = require('axios');
 var FormData = require('form-data');
 var fs = require('fs');
+var QRReader = require('qrcode-reader');
+var jimp = require("jimp");
 
 module.exports = (on, config) => {
   install(on, config);
   require('cypress-grep/src/plugin')(config)
   on("task", {
-    axiosSingleFileUpload: axiosSingleFileUpload
+    axiosSingleFileUpload: axiosSingleFileUpload,
+    readQRCode: readQRCode
   });
   on('before:browser:launch', (browser, launchOptions) => {
     ensureBrowserFlags(browser, launchOptions);
@@ -63,4 +66,21 @@ function axiosSingleFileUpload() {
     const respBody = await JSON.stringify(response.data)
     resolve(respBody);
   })
+}
+
+const readQRCode = async (filePath) => {
+  const fp = path.join(__dirname, filePath)
+  try {
+    if (fs.existsSync(fp)) {
+      const img = await jimp.read(fs.readFileSync(fp));
+      const qr = new QRReader();
+      const value = await new Promise((resolve, reject) => {
+        qr.callback = (err, v) => err != null ? reject(err) : resolve(v);
+        qr.decode(img.bitmap);
+      });
+      return value.result;
+    }
+  } catch (error) {
+    return error.message
+  }
 }

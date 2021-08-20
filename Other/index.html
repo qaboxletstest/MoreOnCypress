@@ -123,10 +123,10 @@
                     aria-label="Rabbits"
                     aria-label="Horses" -->
                     <input aria-label="Dogs" type="checkbox" name="favorite_pet" value="Cats">Cats<br>
-                    <input  aria-label="Dogs" type="checkbox" name="favorite_pet" value="Dogs">Dogs<br>
-                    <input  aria-label="Birds" type="checkbox" name="favorite_pet" value="Birds">Birds<br>
-                    <input  aria-label="Rabbits" type="checkbox" name="favorite_pet" value="Rabbits">Rabbits<br>
-                    <input  aria-label="Horses" type="checkbox" name="favorite_pet" value="Horses">Horses<br>
+                    <input aria-label="Dogs" type="checkbox" name="favorite_pet" value="Dogs">Dogs<br>
+                    <input aria-label="Birds" type="checkbox" name="favorite_pet" value="Birds">Birds<br>
+                    <input aria-label="Rabbits" type="checkbox" name="favorite_pet" value="Rabbits">Rabbits<br>
+                    <input aria-label="Horses" type="checkbox" name="favorite_pet" value="Horses">Horses<br>
                 </fieldset>
             </fieldset>
         </fieldset>
@@ -183,6 +183,10 @@
         </fieldset>
     </div>
     <script>
+        document.addEventListener("readystatechange", () => {
+            console.log("Doc Loaded")
+        })
+
         function submitForm() {
             var node = document.createElement("LI");                 // Create a <li> node
             var textnode = document.createTextNode("Submit - FIND input[type='submit'] ELEMENT ON BASIS OF VALUE");         // Create a text node
