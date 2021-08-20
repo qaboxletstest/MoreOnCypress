@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QR CODE</title>
+    <style>
+        body {
+            background-color: sienna;
+        }
+
+        div,
+        fieldset {
+            border: 2px solid darkorange;
+            margin: 10px;
+            padding: 20px;
+            background-color: white;
+        }
+
+        div#container {
+            border: 5px solid coral;
+            margin: 20px;
+            padding: 20px;
+            background-color: seashell;
+        }
+
+        ul {
+            direction: rtl;
+        }
+
+        h1,
+        h2,
+        legend,
+        a#channel {
+            text-align: center;
+            font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+            color: maroon;
+            text-decoration: none;
+            font-size: 50px;
+            font-weight: bolder;
+            letter-spacing: 5px;
+        }
+
+        h2,
+        legend {
+            font-size: 20px;
+            font-family: Georgia, 'Times New Roman', Times, serif;
+            text-align: left;
+            letter-spacing: 2px;
+        }
+
+        span,
+        label,
+        a {
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            font-size: 25px;
+            letter-spacing: 1px;
+            color: teal;
+        }
+
+        button {
+            border-radius: 5px;
+            background-color: yellowgreen;
+            color: white;
+            font-size: 20px;
+        }
+
+        input[type="text"] {
+            padding: 0;
+            height: 30px;
+            position: relative;
+            left: 0;
+            outline: none;
+            border: 1px solid #cdcdcd;
+            border-color: rgba(0, 0, 0, .15);
+            background-color: white;
+            font-size: 25px;
+        }
+    </style>
+    <script src="qrcode.js"></script>
+</head>
+
+<body>
+    <div id="container">
+        <h1><a id="channel" href="https://www.youtube.com/c/qaboxletstest/playlists">QA BOX LET'S TEST</a></h1>
+        <ul>
+            <li><a href="https://youtu.be/7iZwZ1xhnVw" target="_blank">CSS Selectors</a></li>
+            <li><a href="https://www.youtube.com/playlist?list=PLMZdod-kiMhL-b0OqCEt4Ld6faDtOVeGZ"
+                    target="_blank">JQUERY -
+                    Selectors, Filters & DOM Traversing Methods</a></li>
+            <li><a href="https://youtu.be/LWLq5EmIiSs" target="_blank">DOM Assertions - Chai-jQuery</a></li>
+        </ul>
+        <fieldset>
+            <legend>QR Code - Quick Response Code</legend>
+            <h2>Below Code Contains - QA BOX LET'S TEST</h1>
+                <div id="output"></div>
+        </fieldset>
+    </div>
+    <script>
+        let qrcode = new QRCode("output", {
+            text: "QA BOX LET'S TEST",
+            width: 177,
+            height: 177,
+            colorDark: "#990000",
+            colorLight: "#ffffff",
+            correctLevel: QRCode.CorrectLevel.H
+        });
+    </script>
+</body>
+
+</html>

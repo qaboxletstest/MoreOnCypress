@@ -1,9 +1,9 @@
 describe('QR Code', () => {
-    it.only('QR Code Tests', () => {
-        cy.visit("http://testautomationpractice.blogspot.com/")
-        cy.get("div.widget-content>img").last().screenshot('qrcode').then(function () {
-            cy.task("readQRCode", "../screenshots/QR_Code.spec.js/qrcode.png").then(res => {
-                expect(res).to.eq("Welcome to Selenium")
+    it.only('QR Code Tests', function () {
+        cy.visit("http://127.0.0.1:5500/Other/qrcode.html")
+        cy.get("div#output").last().screenshot(`${this.test.title}`).then(function () {
+            cy.task("readQRCode", `../screenshots/${Cypress.spec.name}/${this.test.title}.png`).then(res => {
+                expect(res.trim()).to.eq("QA BOX LET'S TEST")
             })
         })
     });
