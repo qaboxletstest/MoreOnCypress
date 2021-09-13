@@ -6,6 +6,7 @@ Cypress.Commands.add("login", (uname, pwd) => {
         name: "login",
         displayName: "Login Custom Command",
         message: `uname - ${uname} pwd - ${pwd}`,
+        // 
         consoleProps: () => {
             return {
                 username: uname
@@ -75,5 +76,11 @@ Cypress.Commands.add("getter", (attrValue) => {
         log.set({ $el })
         log.snapshot()
         log.end()
+    })
+
+    cy.on("fail", (err) => {
+        log.error(err)
+        log.end()
+        throw err
     })
 })
