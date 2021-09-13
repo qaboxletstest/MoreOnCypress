@@ -1,3 +1,5 @@
+// Import commands.js using ES2015 syntax:
+import "./commands";
 require('cypress-grep')()
 require('@neuralegion/cypress-har-generator/commands')
 import "cypress-ntlm-auth/dist/commands";
