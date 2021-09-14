@@ -4,7 +4,7 @@ describe.skip('Add Logging to Custom Commands', () => {
         cy.visit("https://the-internet.herokuapp.com/login")
     })
 
-    it('Login Test', () => {
+    it.skip('Login Test', () => {
         cy.get("input#username").type("tomsmith")
         cy.get("input#password").type("SuperSecretPassword!")
         cy.get("button[type='submit']").click()
@@ -12,15 +12,16 @@ describe.skip('Add Logging to Custom Commands', () => {
 
     it.skip('Login Test - Custom Command - Add params to Console', () => {
         cy.login("tomsmith", "SuperSecretPassword!")
+        // cy.login()
     });
 
-    it.skip('Login Test - Custom Command - Add non-params to Console and Capture DOM Snapshot', () => {
+    it.skip('Login Test - Custom Command - Add params & non-params to Console and Capture DOM Snapshot', () => {
         cy.loginConsole("tomsmith", "SuperSecretPassword!")
     });
 
 });
 
-describe.skip('Highlight DOM Element updated in Custom Commands', () => {
+describe.only('Highlight DOM Element updated in Custom Commands', () => {
 
     beforeEach(() => {
         cy.visit("https://qaboxletstest-reacttodo.netlify.app/")
@@ -33,7 +34,7 @@ describe.skip('Highlight DOM Element updated in Custom Commands', () => {
 
 
     it('Highlight DOM Elements even for Custom Commands', function () {
-        cy.getter("task").type("Create Custom GET Command{enter}")
+        cy.getter("task123").type("Create Custom GET Command{enter}")
     });
 
 });

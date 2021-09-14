@@ -1,19 +1,19 @@
+
 Cypress.Commands.add("login", (uname, pwd) => {
+    // Handle Errors
     if (!uname) throw new Error("Please enter username!")
     if (!pwd) throw new Error("Please enter password!")
-
+    // Add Custom Logging
     Cypress.log({
         name: "login",
         displayName: "Login Custom Command",
         message: `uname - ${uname} pwd - ${pwd}`,
-        // 
         consoleProps: () => {
             return {
                 username: uname
             }
         }
     })
-
     cy.get("input#username").type(uname)
     cy.get("input#password").type(pwd)
     cy.get("button[type='submit']").click()
@@ -22,8 +22,8 @@ Cypress.Commands.add("login", (uname, pwd) => {
 Cypress.Commands.add("loginConsole", (uname, pwd) => {
     if (!uname) throw new Error("Please enter username!")
     if (!pwd) throw new Error("Please enter password!")
+    let securedAreaURL
 
-    let secureAreaURL;
     let log = Cypress.log({
         autoEnd: false,
         name: "loginConsole",
@@ -33,21 +33,23 @@ Cypress.Commands.add("loginConsole", (uname, pwd) => {
             return {
                 username: uname,
                 password: pwd,
-                'Secure Area URL': secureAreaURL
+                'Secure Area URL': securedAreaURL
             }
         }
     })
 
     log.snapshot()
+
     cy.get("input#username").type(uname)
     cy.get("input#password").type(pwd)
     cy.get("button[type='submit']").click()
 
     cy.url().then(url => {
-        secureAreaURL = url
+        securedAreaURL = url
         log.snapshot()
         log.end()
     })
+
 })
 
 Cypress.Commands.add("getter", (attrValue) => {
