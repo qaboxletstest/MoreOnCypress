@@ -1,4 +1,4 @@
-/// <reference types="cypress" />
+
 const _ = require('lodash')
 const del = require('del')
 const path = require("path")
@@ -13,6 +13,7 @@ module.exports = (on, config) => {
   install(on, config);
   require('cypress-grep/src/plugin')(config)
   on("task", {
+    failed: require('cypress-failed-log/src/failed')(),
     axiosSingleFileUpload: axiosSingleFileUpload,
     readQRCode: readQRCode
   });
@@ -29,6 +30,7 @@ module.exports = (on, config) => {
     if (results.stats.failures === 0 && results.video) {
       return del(results.video)
     }
+
   })
   on('after:spec', (spec, results) => {
     if (results && results.video) {

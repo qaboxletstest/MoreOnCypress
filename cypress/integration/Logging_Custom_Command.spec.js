@@ -33,8 +33,14 @@ describe.only('Highlight DOM Element updated in Custom Commands', () => {
     });
 
 
-    it('Highlight DOM Elements even for Custom Commands', function () {
-        cy.getter("task123").type("Create Custom GET Command{enter}")
+    it('Highlight DOM Elements even for Custom Commands', {
+        retries: {
+            runMode: 2,
+            openMode: 1,
+        },
+    }, function () {
+        cy.getter("task").type("Create Custom GET Command{enter}")
+        cy.contains("p", "Create Custom GET Command").should("not.be.visible")
     });
 
 });

@@ -1,0 +1,10 @@
+{
+  "specName": "Login_Programatically_spec.js",
+  "title": "Using API - Custom Login API Command",
+  "suiteName": "Login Programatically and cy.session",
+  "testName": "Login Programatically and cy.session Using API - Custom Login API Command",
+  "testError": "`cy.request()` failed trying to load:\n\nhttp://localhost:3001/login\n\nWe attempted to make an http request to this URL but the request failed without a response.\n\nWe received this error at the network level:\n\n  > Error: socket hang up\n\n-----------------------------------------------------------\n\nThe request we sent was:\n\nMethod: POST\nURL: http://localhost:3001/login\n\n-----------------------------------------------------------\n\nCommon situations why this would fail:\n  - you don't have internet access\n  - you forgot to run / boot your web server\n  - your web server isn't accessible\n  - you have weird network configuration settings on your computer",
+  "testCommands": [
+    "request "
+  ]
+}

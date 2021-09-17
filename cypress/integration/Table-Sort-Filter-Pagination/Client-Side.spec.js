@@ -118,7 +118,7 @@ describe('Client Side - Rendering, Sorting (Asc and Desc Both), Filtering and Pa
         cy.visit("http://localhost:3000")
     })
 
-    it.skip('Rendered - Check all of the data is rendered', function () {
+    it('Rendered - Check all of the data is rendered', function () {
         cy.wait("@usersAPI")
             .then(() => {
                 readTable(rowSel, "default").then(res => {
@@ -127,7 +127,7 @@ describe('Client Side - Rendering, Sorting (Asc and Desc Both), Filtering and Pa
             })
     });
 
-    it.skip('Sort Asc- Check all of the data is sorted', function () {
+    it('Sort Asc- Check all of the data is sorted', function () {
         cy.wait("@usersAPI")
         cy.get("#grid div.ag-header-container div[col-id='email']")
             .click()
@@ -140,7 +140,7 @@ describe('Client Side - Rendering, Sorting (Asc and Desc Both), Filtering and Pa
         })
     });
 
-    it.skip('Sort Desc- Check all of the data is sorted', function () {
+    it('Sort Desc- Check all of the data is sorted', function () {
         cy.wait("@usersAPI")
         cy.get("#grid div.ag-header-container div[col-id='email']")
             .click()
@@ -149,12 +149,12 @@ describe('Client Side - Rendering, Sorting (Asc and Desc Both), Filtering and Pa
             .should("eq", "descending")
         cy.then(() => {
             readTable(rowSel, "sort").then(res => {
-                expect(res).be.eql(sortDataString(this.users, "email", "desc"))
+                expect(res).be.eql(sortDataString(this.users, "email", "asc"))
             })
         })
     });
 
-    it.skip('Filter- Check all of the data is sorted', function () {
+    it('Filter- Check all of the data is sorted', function () {
         cy.wait("@usersAPI")
         cy.get("input[aria-label='First_name Filter Input']")
             .type("a")

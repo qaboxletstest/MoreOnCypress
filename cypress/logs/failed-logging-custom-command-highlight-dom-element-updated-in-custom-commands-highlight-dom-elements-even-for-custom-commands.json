@@ -1,0 +1,14 @@
+{
+  "specName": "Logging_Custom_Command.spec.js",
+  "title": "Highlight DOM Elements even for Custom Commands",
+  "suiteName": "Highlight DOM Element updated in Custom Commands",
+  "testName": "Highlight DOM Element updated in Custom Commands Highlight DOM Elements even for Custom Commands",
+  "testError": "Timed out retrying after 4000ms: expected '<p.MuiTypography-root.MuiTypography-body1>' not to be 'visible'",
+  "testCommands": [
+    "visit https://qaboxletstest-reacttodo.netlify.app/",
+    "getter Name Attr - task",
+    "type Create Custom GET Command{enter}",
+    "contains p, Create Custom GET Command",
+    "assert expected **<p.MuiTypography-root.MuiTypography-body1>** not to be **visible**"
+  ]
+}

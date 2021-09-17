@@ -1,5 +1,8 @@
 // Import commands.js using ES2015 syntax:
 import "./commands";
+// cypress/support/index.js
+require('cypress-failed-log')
+
 require('cypress-grep')()
 require('@neuralegion/cypress-har-generator/commands')
 import "cypress-ntlm-auth/dist/commands";

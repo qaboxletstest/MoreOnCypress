@@ -3,5 +3,6 @@
     "screenshotOnRunFailure": false,
     "video": true,
     "chromeWebSecurity": true,
-    "experimentalStudio": true
+    "experimentalStudio": true,
+    "baseUrl": "http://localhost:3000"
 }

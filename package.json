@@ -20,7 +20,6 @@
   "license": "MIT",
   "dependencies": {
     "axios": "^0.21.1",
-    "cypress": "^8.2.0",
     "cypress-fail-on-console-error": "^2.1.0",
     "cypress-grep": "^2.5.2",
     "cypress-ntlm-auth": "^3.2.3",
@@ -30,6 +29,8 @@
     "qrcode-reader": "^1.0.4"
   },
   "devDependencies": {
-    "@neuralegion/cypress-har-generator": "^5.2.3"
+    "@neuralegion/cypress-har-generator": "^5.2.3",
+    "cypress": "^8.4.0",
+    "cypress-failed-log": "^2.9.2"
   }
 }

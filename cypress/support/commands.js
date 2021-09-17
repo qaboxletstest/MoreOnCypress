@@ -86,3 +86,21 @@ Cypress.Commands.add("getter", (attrValue) => {
         throw err
     })
 })
+
+Cypress.Commands.add("loginUI", (username, password) => {
+    cy.visit("/")
+    cy.get("input#username").type(username)
+    cy.get("input#password").type(password)
+    cy.get("button[type='submit']").click()
+    cy.get("h6[data-test='sidenav-username']").should("have.text", `@${username}`)
+})
+
+Cypress.Commands.add("loginAPI", (username, password) => {
+    cy.request({
+        method: 'POST',
+        url: 'http://localhost:3001/login',
+        body: { username, password },
+    }).then(({ body }) => {
+        window.localStorage.setItem('authToken', body.token)
+    })
+})
